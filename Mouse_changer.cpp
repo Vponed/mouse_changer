@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include <iostream>
+//#include <iostream>
 #include <Windows.h>
 
 void Set_rus_cursor()
