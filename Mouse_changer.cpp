@@ -82,12 +82,12 @@ int main(int argc, char **argv)
 		}
 
 		//std::cout << LOWORD(locale) << "\n";
-		if (LOWORD(locale) == 1033)
+		if (LOWORD(locale2) == 1033)
 		{
 			//	std::cout << "en" << "\n";
 			Set_en_cursor();
 		}
-		if (LOWORD(locale) == 1049)
+		if (LOWORD(locale2) == 1049)
 		{
 			//	std::cout << "ru" << "\n";
 			Set_rus_cursor();
