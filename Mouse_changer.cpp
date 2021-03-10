@@ -70,21 +70,29 @@ int main(int argc, char **argv)
 	while (true)
 	{
 
+
 		HWND window_handle = GetForegroundWindow();
 		DWORD thread = GetWindowThreadProcessId(window_handle, 0);
 		HKL locale = GetKeyboardLayout(thread);
+		Sleep(500); //milliseconds for waiting
+		HKL locale2 = GetKeyboardLayout(thread);
+		if (locale == locale2)
+		{
+			continue;
+		}
+
 		//std::cout << LOWORD(locale) << "\n";
 		if (LOWORD(locale) == 1033)
 		{
-			//std::cout << "en" << "\n";
+			//	std::cout << "en" << "\n";
 			Set_en_cursor();
 		}
 		if (LOWORD(locale) == 1049)
 		{
-			//std::cout << "ru" << "\n";
+			//	std::cout << "ru" << "\n";
 			Set_rus_cursor();
 		}
 		//en 1033 ru 1049
-		Sleep(500); //milliseconds for waiting
+
 	}
 }
